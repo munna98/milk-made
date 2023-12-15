@@ -26,26 +26,34 @@ const statusMap = {
 };
 
 export const InvoiceList = (props) => {
-  const { orders = [], sx } = props;
+  const { orders = [{id:10,customer:'Munna',createdAt:new Date, status:'pending', amount:546 },
+  {id:10,customer:'Munna',createdAt:new Date, status:'pending', amount:546 },
+  {id:10,customer:'Munna',createdAt:new Date, status:'pending', amount:546 },
+  {id:10,customer:'Munna',createdAt:new Date, status:'pending', amount:546 },
+  {id:10,customer:'Munna',createdAt:new Date, status:'pending', amount:546 },
+  {id:10,customer:'Munna',createdAt:new Date, status:'pending', amount:546 }], sx } = props;
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest Orders" />
+      <CardHeader title="Invoices" />
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Invoice No
-                </TableCell>
-                <TableCell>
-                  Customer
+                  V No
                 </TableCell>
                 <TableCell sortDirection="desc">
                   Date
                 </TableCell>
                 <TableCell>
+                  Customer
+                </TableCell>
+                <TableCell>
+                  Amount
+                </TableCell>
+                <TableCell> 
                   Status
                 </TableCell>
               </TableRow>
@@ -60,13 +68,16 @@ export const InvoiceList = (props) => {
                     key={order.id}
                   >
                     <TableCell>
-                      {order.ref}
-                    </TableCell>
-                    <TableCell>
-                      {order.customer.name}
+                      {order.id}
                     </TableCell>
                     <TableCell>
                       {createdAt}
+                    </TableCell>
+                    <TableCell>
+                      {order.customer}
+                    </TableCell>
+                    <TableCell>
+                      {order.amount}
                     </TableCell>
                     <TableCell>
                       <SeverityPill color={statusMap[order.status]}>

@@ -9,6 +9,7 @@ import { useSelection } from 'src/hooks/use-selection';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { InvoiceList } from 'src/sections/invoice/invoice-list';
 import { InvoiceSearch } from 'src/sections/invoice/invoice-search';
+import { InvoiceDetails } from 'src/sections/invoice/invoice-form';
 
 const now = new Date();
 
@@ -247,6 +248,7 @@ const Page = () => {
               // rowsPerPage={rowsPerPage}
               // selected={customersSelection.selected}
             />
+            <InvoiceDetails/>
           </Stack>
         </Container>
       </Box>
