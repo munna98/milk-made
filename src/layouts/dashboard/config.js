@@ -6,6 +6,7 @@ import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
+import PencilSquareIcon from '@heroicons/react/24/solid/PencilSquareIcon';
 import { SvgIcon } from '@mui/material';
 
 export const items = [
@@ -19,11 +20,20 @@ export const items = [
     )
   },
   {
+    title: 'Products',
+    path: '/products',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ShoppingBagIcon />
+      </SvgIcon>
+    )
+  },
+  {
     title: 'Invoices',
     path: '/invoices',
     icon: (
       <SvgIcon fontSize="small">
-        <ChartBarIcon />
+        <PencilSquareIcon />
       </SvgIcon>
     )
   },

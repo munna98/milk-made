@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import PlusIcon from "@heroicons/react/24/solid/PlusIcon";
 import {
   Box,
   Button,
@@ -9,7 +10,9 @@ import {
   Divider,
   TextField,
   Unstable_Grid2 as Grid,
+  SvgIcon,
 } from "@mui/material";
+import TableSpanning from "./invoice-items";
 
 const states = [
   {
@@ -57,9 +60,10 @@ export const InvoiceDetails = () => {
           //   subheader="The information can be edited"
           title="New invoice"
         />
+
         <CardContent sx={{ pt: 1 }}>
           <Box sx={{ m: -1.5 }}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} sx={{ padding: 3 }}>
               <Grid xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -77,6 +81,24 @@ export const InvoiceDetails = () => {
                     </option>
                   ))}
                 </TextField>
+              </Grid>
+            </Grid>
+          </Box>
+          <TableSpanning />
+
+          <Box sx={{ m: -1.5 }}>
+            <Grid container spacing={3} sx={{ padding: 3 }}>
+              <Grid xs={12} md={12}>
+                <Button
+                  startIcon={
+                    <SvgIcon fontSize="small">
+                      <PlusIcon />
+                    </SvgIcon>
+                  }
+                  variant="contained"
+                >
+                  Add item
+                </Button>
               </Grid>
               <Grid xs={12} md={6}>
                 <TextField
@@ -125,8 +147,11 @@ export const InvoiceDetails = () => {
                   name="amount"
                   onChange={handleChange}
                   type="number"
-                  value={values.amount}
+                  value={values.rate * values.quantity}
                 />
+              </Grid>
+              <Grid xs={12} md={12}>
+                <Button variant="contained">Add </Button>
               </Grid>
             </Grid>
           </Box>
