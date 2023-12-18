@@ -32,11 +32,12 @@ const states = [
 
 export const ProductForm = () => {
   const [values, setValues] = useState({
-    firstName: 'Anika',
-    lastName: 'Visser',
-    email: 'demo@devias.io',
-    phone: '',
-    state: 'los-angeles',
+    code:'',
+    name: '',
+    prate: '',
+    srate: '',
+    mrp: '',
+    gst: 'los-angeles',
     country: 'USA'
   });
 
@@ -80,12 +81,11 @@ export const ProductForm = () => {
               >
                 <TextField
                   fullWidth
-                  helperText="Please specify the first name"
-                  label="First name"
-                  name="firstName"
+                  label="Last name"
+                  name="lastName"
                   onChange={handleChange}
                   required
-                  value={values.firstName}
+                  value={values.lastName}
                 />
               </Grid>
               <Grid
@@ -94,11 +94,11 @@ export const ProductForm = () => {
               >
                 <TextField
                   fullWidth
-                  label="Last name"
-                  name="lastName"
+                  label="Item name"
+                  name="name"
                   onChange={handleChange}
                   required
-                  value={values.lastName}
+                  value={values.name}
                 />
               </Grid>
               <Grid
